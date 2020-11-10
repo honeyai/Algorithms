@@ -45,13 +45,21 @@ const fibGen = (n) => {
   }
 };
 
-console.log(fibGen(2));
+//console.log(fibGen(2));
 
 //attempt with recursion
 
 //so the function has to call itself for as many times that there is n. 
   //takes things that are done imperatively and makes it hidden.
 
-const fibGen  = n => {
-
+const fibGenRecursive  = n => {
+  if(n === 0) {
+    return 0;
+  } else if( n === 2) {
+    return 1;
+  } else {
+    return fibGenRecursive(n - 1) - fibGenRecursive(n - 2);
+  }
 }
+
+console.log(fibGenRecursive(5));
